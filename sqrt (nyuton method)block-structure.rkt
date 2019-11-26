@@ -1,5 +1,5 @@
 #lang racket
-(define (sqrt x)
+(define (sqrtNyuton x)
   (define (good? guess)
     (< (abs (- (square guess) x)) 0.001))
   (define (improve guess)
@@ -12,4 +12,4 @@
     (if (good? guess)
         guess
         (iter (improve guess))))
-  (iter 1 x))
+  (iter x))
