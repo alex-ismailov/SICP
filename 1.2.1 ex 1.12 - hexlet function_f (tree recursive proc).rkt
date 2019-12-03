@@ -1,7 +1,7 @@
 #lang racket
-(define (func n)
+(define (f n)
   (if (< n 3)
       n
-      (+ (func (- n 1))
-         (* 2 (func (- n 2)))
-         (* 3 (func (- n 3))))))
+      (+ (f (- n 1))
+         (* 2 (f (- n 2)))
+         (* 3 (f (- n 3))))))

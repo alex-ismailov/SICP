@@ -1,5 +1,5 @@
 #lang racket
-(define (func n)
+(define (f n)
   (define (iter a b c count)
   (if(= count 0)
      a
