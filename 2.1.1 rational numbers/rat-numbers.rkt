@@ -1,7 +1,10 @@
 #lang racket
 (define x (cons 1 2))
 
-(define (make-rat x y) (cons x y))
+(define (make-rat n d)
+  (let ((g (gcd n d)))
+    (cons (/ n g) (/ d g))))
+
 (define (numer q) (car q))
 (define (denom q) (cdr q))
 
@@ -34,6 +37,7 @@
   (display (denom x)))
 
 
+(print-rat (add-rat (make-rat 20 5) (make-rat 12 3)))
 (print-rat (add-rat (make-rat 1 2) (make-rat 3 2)))
 (print-rat (sub-rat (make-rat 3 2) (make-rat 1 2)))
 (print-rat (mul-rat (make-rat 3 2) (make-rat 1 2)))
@@ -41,3 +45,5 @@
 (newline)
 (equal-rat (make-rat 3 2) (make-rat 1 2))
 (equal-rat (make-rat 3 2) (make-rat 3 2))
+
+(print-rat (make-rat 20 5))
