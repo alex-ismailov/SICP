@@ -8,3 +8,5 @@
 (define four-six (list 4 5 6))
 
 (append one-three four-six)
+
+(car (cdr (cdr (cdr (cdr (cdr (append one-three four-six)))))))
